@@ -1,0 +1,95 @@
+@import "_reset";
+@import "_variables";
+@import "_fonts";
+
+.table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  color: #fff;
+
+  .table__number {
+    .table__item {
+      position: relative;
+      background-color: #a5a5a5;
+      width: 86px;
+
+      img {
+        width: 10px;
+        height: 10px;
+        transform: rotate(90deg);
+        right: calc(50% - 5px);
+        bottom: -10px;
+        position: absolute;
+      }
+    }
+  }
+
+  .table__name {
+    .table__item {
+      background-color: #4f71be;
+    }
+  }
+
+  .table__address {
+    .table__item {
+      background-color: #7eab55;
+
+      &:nth-child(2) {
+        text-align: left;
+      }
+      &:nth-child(5) {
+        text-align: left;
+      }
+      &:nth-child(6) {
+        text-align: left;
+      }
+    }
+  }
+
+  .table__date {
+    .table__item {
+      background-color: #6a99d0;
+    }
+  }
+
+  .table__column {
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+
+    &:last-child {
+      .table__item {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+
+    .table__item {
+      position: relative;
+      margin: 5px 10px;
+      padding: 20px 20px;
+      border-radius: $borderRadius;
+
+      &:first-child {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        right: -45px;
+        height: 1px;
+        width: 45px;
+        background-color: #cfd9ee;
+      }
+    }
+  }
+}
