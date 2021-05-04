@@ -102,7 +102,27 @@ body {
           flex-direction: row;
 }
 
-.row-item {
+.root .grid {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  -ms-grid-columns: 140px auto auto 160px;
+      grid-template-columns: 140px auto auto 160px;
+  -ms-grid-rows: auto auto auto auto auto;
+      grid-template-rows: auto auto auto auto auto;
+  row-gap: 20px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  min-width: 1024px;
+  grid-auto-columns: minmax(auto, 375px);
+  font-size: 20px;
+}
+
+.root .grid .table-head::after {
+  display: none;
+}
+
+.root .grid .row-item {
   max-width: calc(100vw - 20px);
   color: #ffffff;
   padding: 8px;
@@ -119,7 +139,7 @@ body {
   position: relative;
 }
 
-.row-item::after {
+.root .grid .row-item::after {
   position: absolute;
   content: "";
   top: 50%;
@@ -129,7 +149,7 @@ body {
   background-color: #cfd9ee;
 }
 
-.row-number {
+.root .grid .row-number {
   min-width: unset;
   background-color: #a5a5a5;
   display: -webkit-box;
@@ -145,7 +165,7 @@ body {
   color: #ffffff;
 }
 
-.row-number img {
+.root .grid .row-number img {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   position: absolute;
@@ -153,41 +173,21 @@ body {
   bottom: -20px;
 }
 
-.row-name {
+.root .grid .row-name {
   background-color: #4f71be;
 }
 
-.row-address {
+.root .grid .row-address {
   background-color: #7eab55;
 }
 
-.row-date {
+.root .grid .row-date {
   background-color: #6a99d0;
 }
 
-.row-date::after {
+.root .grid .row-date::after {
   width: 0;
   height: 0;
-}
-
-.grid {
-  display: -ms-grid;
-  display: grid;
-  width: 100%;
-  -ms-grid-columns: 140px auto auto 160px;
-      grid-template-columns: 140px auto auto 160px;
-  -ms-grid-rows: auto auto auto auto auto;
-      grid-template-rows: auto auto auto auto auto;
-  row-gap: 20px;
-  -webkit-column-gap: 20px;
-          column-gap: 20px;
-  min-width: 1024px;
-  grid-auto-columns: minmax(auto, 375px);
-  font-size: 20px;
-}
-
-.grid .table-head::after {
-  display: none;
 }
 
 @media (min-width: 1024px) {
