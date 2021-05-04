@@ -149,6 +149,10 @@ body {
   background-color: #cfd9ee;
 }
 
+.root .grid .row-item p {
+  width: 100%;
+}
+
 .root .grid .row-number {
   min-width: unset;
   background-color: #a5a5a5;
